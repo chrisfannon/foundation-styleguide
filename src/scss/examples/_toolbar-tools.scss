@@ -1,0 +1,157 @@
+.toolbar {
+  align-items: center;
+  background-color: get-color( gray--080 );
+  border-bottom: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 4px;
+  width:100%;
+  
+  > *:first-child {
+    border-bottom: 0;
+  } 
+  
+  .tools {
+    align-items: center;
+    display: flex;  
+    justify-content: flex-start;
+    flex: 1 0 50%;
+    max-width: 100px;
+    
+    @at-root .take-3 & {
+      flex: 2 0 auto;
+      max-width: none;
+    }
+    
+    @at-root .take-3 & > *:last-child {
+      flex: 2 0 auto;
+      text-align:right;
+    }
+    
+    @at-root .take-3 & > *:nth-last-child( 2 ),
+             .take-3 & > *:first-child {
+      border-left: 1px dotted get-color( gray--030 );
+      margin-left: 1em;
+      padding-left: 1em;
+    }
+    
+  }
+  
+  .tool {
+    font-size: 11px;
+    margin-bottom: 0;    
+    padding: 8px;
+    
+    svg {
+      fill: get-color( blue--300 );
+      max-width: 25px;
+      width: 25px; 
+      height: 25px; 
+      
+      @at-root .take-3 & {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    
+    &:focus,
+    &:focus:hover {
+      svg {
+        fill: get-color( green--400 );
+      }
+    }
+    
+  }
+  
+  > div + div {
+    margin-left: 2em;
+    
+    @at-root .take-3 & {
+      margin-left: 0;
+    }
+  }
+  
+  .search {
+    align-self: center;
+    flex: 1 0 100px;
+    max-width: 300px; 
+    
+    @at-root #{&}--inner {
+      display: flex;
+      position: relative;
+    }
+    
+    input[type='text'] {
+      margin: 0;
+      font-size: 13px;
+      padding: 0.5em;
+    }
+    
+    .button {
+      margin-bottom:0;
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      bottom: 2px;
+      padding: 0.5em;
+      font-size: 13px;
+    }
+    
+    @at-root .take-3 & {
+      padding-right: 1em;
+    }
+  }
+  
+  .edits {
+    align-self: center;
+    flex: 1 0 100px;
+    max-width: 300px;
+    
+    @at-root .take-3 & {
+      border-left: 1px dotted get-color( gray--030 );
+      flex: none;
+      margin: 0 1em;
+      padding-left: 1em;
+    }
+    
+    .button {
+      margin-bottom: 0;
+      
+      &.active {
+        
+      }
+      
+      &:last-child {
+        margin-left: .5em;
+      }
+      
+    }    
+  }
+  
+  .svg-icon {
+    transform-origin: center;
+    transition: all .2s ease-in-out;
+    
+    &.active {
+      transform: rotatez( 90deg );
+    }
+  }
+  
+  .creationMenu {
+    
+    .edit-layers {
+      margin-bottom: 0;
+    
+      li:first-child {
+        border: none;
+        font-weight: normal;
+      }
+    }
+    
+    .button {
+      margin-bottom: 0;
+    }
+  }
+  
+}

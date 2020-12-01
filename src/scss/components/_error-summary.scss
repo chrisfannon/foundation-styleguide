@@ -1,0 +1,54 @@
+.error-summary {
+  background-color: get-color( gray--005 );
+  box-shadow: 1px 2px 3px 0 rgba( 0, 0, 0, 0.1 );
+  border: 4px solid get-color( red--600 );
+  border-radius: 2px;
+  margin-bottom: 2em;
+  padding: 1.5em 1.5em 1.5em 3.4375em;
+  
+  .headline {
+    align-items: center;
+    display: flex;
+    position: relative;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: .75rem;
+    
+    &:before {
+      color: get-color( red--600 );
+      content: "\f057";
+      font-family: "Font Awesome 5 Free";
+      font-size: 19px;
+      font-weight: bold;
+      left: -35px;
+      position: absolute;
+    }
+    
+  }
+  
+  a:link {
+    color: get-color( red--600 );
+    text-decoration: underline;
+  }
+  
+  ul {
+    counter-reset: errorlist;
+    list-style-type: none;
+    margin: 0;
+    
+    li {
+      
+      & + li {
+        padding-top: 4px;
+      }
+      
+      &:before {
+        color: get-color( red--600 );
+        counter-increment: errorlist;
+        content: counters( errorlist, "." )  ". ";
+        font-weight: bold;
+      }
+      
+    }
+  }
+}

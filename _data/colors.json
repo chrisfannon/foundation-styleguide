@@ -1,0 +1,114 @@
+[
+  {
+    "colorName": "green--300",
+    "colorHEX": "#eaf7c6"
+  },
+  {
+    "colorName": "green--400",
+    "colorHEX": "#cae778"
+  },
+  {
+    "colorName": "green--500",
+    "colorHEX": "#84bd00"
+  },
+  {
+    "colorName": "green--600",
+    "colorHEX": "#587604"
+  },
+  {
+    "colorName": "green--650",
+    "colorHEX": "#2F651A"
+  },
+  {
+    "colorName": "green--700",
+    "colorHEX": "#33430a"
+  },
+  {
+    "colorName": "blue--300",
+    "colorHEX": "#e8f4fc"
+  },
+  {
+    "colorName": "blue--400",
+    "colorHEX": "#b6dffa"
+  },
+  {
+    "colorName": "blue--500",
+    "colorHEX": "#62b5e5"
+  },
+  {
+    "colorName": "blue--600",
+    "colorHEX": "#116fa2"
+  },
+  {
+    "colorName": "blue--700",
+    "colorHEX": "#074567"
+  },
+  {
+    "colorName": "brown--200",
+    "colorHEX": "#fff0d4"
+  },
+  {
+    "colorName": "brown--300",
+    "colorHEX": "#FFEFBA"
+  },
+  {
+    "colorName": "brown--400",
+    "colorHEX": "#edce92"
+  },
+  {
+    "colorName": "brown--500",
+    "colorHEX": "#6E4A00"
+  },
+  {
+    "colorName": "brown--600",
+    "colorHEX": "#a24a0f"
+  },
+  {
+    "colorName": "brown--700",
+    "colorHEX": "#755a00"
+  },
+  {
+    "colorName": "red--400",
+    "colorHEX": "#eaafaa"
+  },
+  {
+    "colorName": "red--600",
+    "colorHEX": "#ab362b"
+  },
+  {
+    "colorName": "gray--000",
+    "colorHEX": "#ffffff"
+  },
+  {
+    "colorName": "gray--005",
+    "colorHEX": "#f2f2f2"
+  },
+  {
+    "colorName": "gray--010",
+    "colorHEX": "#e6e6e6"
+  },
+  {
+    "colorName": "gray--020",
+    "colorHEX": "#cccccc"
+  },
+  {
+    "colorName": "gray--030",
+    "colorHEX": "#b3b3b3"
+  },
+  {
+    "colorName": "gray--070",
+    "colorHEX": "#4d4d4d"
+  },
+  {
+    "colorName": "gray--080",
+    "colorHEX": "#333333"
+  },
+  {
+    "colorName": "gray--090",
+    "colorHEX": "#1a1a1a"
+  },
+  {
+    "colorName": "gray--100",
+    "colorHEX": "#000000"
+  }
+]

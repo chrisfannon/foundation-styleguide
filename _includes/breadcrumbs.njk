@@ -1,0 +1,9 @@
+{% set breadcrumbPages = collections.all | eleventyNavigationBreadcrumb( eleventyNavigation.key ) %}
+<nav aria-label="You are here:" role="navigation">
+  <ul class="breadcrumbs">
+    {% for item in breadcrumbPages %}
+    <li><a href="{{ item.url | url }}">{{ item.key }}</a></li>
+    {% endfor %}
+    <li><span class="show-for-sr">Current: </span> {{ eleventyNavigation.title }}</li>
+  </ul>
+</nav>

@@ -1,0 +1,294 @@
+// Button
+.button {
+  transition: all 0.2s ease-out;
+  
+  &.small {
+    padding: .3077em .6154em;
+    
+     &:hover {
+       box-shadow: 0 0 0 0.0625em get-color( gray--000 ), 0 0.2308em 0 0 get-color( blue--600 );
+     }
+     
+     &:focus {
+       box-shadow: 0 0 0 0.0625em get-color( gray--000 ), 0 0 0 0.1538em get-color( green--500 );
+      outline: none;
+     }
+     
+     &:hover:focus {
+       box-shadow: 0 0 0 0.0625em get-color( gray--000 ), 0 0.3846em 0 0 get-color( green--500 );
+     }
+     
+     &:active {
+       box-shadow: 0 0 0 0.0625em get-color( green--500 ), 0 0 0 0.1538em get-color( green--500 );
+       transition-duration: .05s;
+     }
+  }
+  
+  &.large {
+    padding: 1em 1.5em; 
+  }
+  
+  &:hover {
+    background-color: get-color( blue--700 );
+    box-shadow: inset 0 0 0 0.0625em get-color( blue--600 ), inset 0 -0.1875em 0 0 get-color( blue--400 );
+  }
+  
+  &:focus {
+    background-color: get-color( green--700 );
+    box-shadow: inset 0 0 0 0.0625em get-color( green--600 ), inset 0 0 0 0.1875em get-color( green--400 );
+    outline: none;
+  }
+  
+  &:hover:focus {
+    box-shadow: inset 0 0 0 0.0625em get-color( green--600 ), inset 0 -0.3125em 0 0 get-color( green--400 );
+  }
+  
+  &:active {
+    background-color: get-color( green--700 );
+    box-shadow: inset 0 0 0 0.1875em get-color( green--600 ), inset 0 0 0 0.3125em get-color( green--400 );
+    transition-duration: .05s;
+  }
+  
+  &[disabled="disabled"] {
+    
+    background-color: get-color( gray--020 );
+    box-shadow: none;
+    color: get-color( gray--030 );
+    opacity: 1;
+    outline: none; 
+    
+    &:hover,
+    &:focus,
+    &:focus:hover,
+    &:active {
+      background-color: get-color( gray--020 );
+      box-shadow: none;
+      color: get-color( gray--030 );
+      opacity: 1;
+      outline: none;  
+    }
+    
+  }
+  
+  &.hollow,
+  &.clear {
+    font-weight: normal;
+    
+    i {
+      font-size: 0.8125em;
+      margin-right: 0.615384615384615em;
+    }
+  }
+  
+  &.hollow {
+    background-color: get-color( gray--000 );
+    
+    &.small {
+      
+      &:hover {
+        box-shadow: 0 0 0 0.0625em get-color( gray--000 ), 0 0.2308em 0 0 get-color( blue--600 );
+      }
+      &:focus {
+        box-shadow: 0 0 0 0.0625em get-color( gray--000 ), 0 0 0 0.1538em get-color( green--500 );
+        outline: none;
+      }
+      &:hover:focus {
+        box-shadow: 0 0 0 0.0625em get-color( gray--000 ), 0 0.3846em 0 0 get-color( green--500 );
+      }
+      &:active {
+        box-shadow: 0 0 0 0.0625em get-color( green--500 ), 0 0 0 0.1538em get-color( green--500 );
+      }
+    }
+    
+    &:hover {
+      background-color: get-color( gray--000 );
+      border-color: get-color( blue--700 );
+      box-shadow: inset 0 0 0 0.0625em get-color( gray--000 ), inset 0 -0.1875em 0 0 get-color( blue--600 );
+      color: get-color( blue--700 );
+    }
+    
+    &:focus {
+      background-color: get-color( gray--000 );
+      border-color: get-color( green--700 );
+      box-shadow: inset 0 0 0 0.0625em get-color( gray--000 ), inset 0 0 0 0.1875em get-color( green--500 );
+      color: get-color( green--700 );
+      outline: none;
+    }
+    
+    &:hover:focus {
+      box-shadow: inset 0 0 0 0.0625em get-color( gray--000 ), inset 0 -0.3125em 0 0 get-color( green--500 );
+    }
+    
+    &:active {
+      background-color: get-color( gray--000 );
+      border-color: get-color( green--700 );
+      box-shadow: inset 0 0 0 0.1875em get-color( gray--000 ), inset 0 0 0 0.3125em get-color( green--500 );
+      color: get-color( green--700 );
+    }
+    
+    &[disabled="disabled"] {
+    
+      border-color: get-color( gray--020 );
+      box-shadow: none;
+      color: get-color( gray--030 );
+      opacity: 1;
+      outline: none; 
+      
+      &:hover,
+      &:focus,
+      &:focus:hover,
+      &:active {
+        border-color: get-color( gray--020 );
+        box-shadow: none;
+        color: get-color( gray--030 );
+        opacity: 1;
+        outline: none;  
+      }
+      
+    }
+  
+  }
+  
+  &.clear {
+    
+    &.small {
+      border-radius: 1px;
+      &:hover {
+       box-shadow: 0 0 0 0.0625em get-color( gray--000 ), 0 0.2308em 0 0 get-color( blue--600 );
+      }
+      
+      &:focus {
+       box-shadow: 0 0 0 0.0625em get-color( gray--000 ), 0 0 0 0.1538em get-color( green--500 );
+      outline: none;
+      }
+      
+      &:hover:focus {
+       box-shadow: 0 0 0 0.0625em get-color( gray--000 ), 0 0.3846em 0 0 get-color( green--500 );
+      }
+      
+      &:active {
+       box-shadow: 0 0 0 0.0625em get-color( green--500 ), 0 0 0 0.1538em get-color( green--500 );
+      }
+    }
+    
+     &:hover {
+       background-color: get-color( gray--000 );
+       border-color: get-color( gray--000 );
+       box-shadow: inset 0 0 0 0.0625em get-color( gray--000 ), inset 0 -0.1875em 0 0 get-color( blue--600 );
+       color: get-color( blue--700 );
+     }
+     
+     &:focus {
+       background-color: get-color( gray--000 );
+       border-color: get-color( gray--000 );
+       box-shadow: inset 0 0 0 0.0625em get-color( gray--000 ), inset 0 0 0 0.1875em get-color( green--500 );
+       color: get-color( green--700 );
+       outline: none;
+     }
+     
+     &:hover:focus {
+      box-shadow: inset 0 0 0 0.0625em get-color( gray--000 ), inset 0 -0.3125em 0 0 get-color( green--500 );
+     }
+     
+     &:active {
+       background-color: get-color( gray--000 );
+       border-color: get-color( gray--000 );
+       box-shadow: inset 0 0 0 0.1875em get-color( gray--000 ), inset 0 0 0 0.3125em get-color( green--500 );
+       color: get-color( green--700 );
+     }
+     
+     &[disabled="disabled"] {
+    
+        background-color: transparent;
+        box-shadow: none;
+        color: get-color( gray--030 );
+        opacity: 1;
+        outline: none; 
+        
+        &:hover,
+        &:focus,
+        &:focus:hover,
+        &:active {
+          background-color: transparent;
+          box-shadow: none;
+          color: get-color( gray--030 );
+          opacity: 1;
+          outline: none;  
+        }
+        
+      }
+     
+     &.dark {
+       border-color: transparent;
+      color: get-color( blue--300 );
+      
+      &.small {
+        border-radius: 1px;
+        &:hover {
+         box-shadow: 0 0 0 0.0625em get-color( gray--100 ), 0 0.2308em 0 0 get-color( blue--400 );
+        }
+       
+        &:focus {
+         box-shadow: 0 0 0 0.0625em get-color( gray--100 ), 0 0 0 0.1538em get-color( green--400 );
+         outline: none;
+        }
+       
+        &:hover:focus {
+          box-shadow: 0 0 0 0.0625em get-color( gray--100 ), 0 0.3846em 0 0 get-color( green--400 );
+        }
+        
+        &:active {
+         box-shadow: 0 0 0 0.0625em get-color( green--400 ), 0 0 0 0.1538em get-color( green--400 );
+         outline: none;
+        }
+      }
+      
+      &:hover{
+        background-color: get-color( gray--100 );
+        box-shadow: inset 0 0 0 0.0625em get-color( gray--100 ), inset 0 -0.1875em 0 0 get-color( blue--400 );
+      }
+      
+      
+      &:focus {
+        background-color: get-color( gray--100 );
+        box-shadow: inset 0 0 0 0.0625em get-color( gray--100 ), inset 0 0 0 0.1875em get-color( green--400 );
+        color: get-color( green--400 );
+        outline: none;
+      }
+      
+      &:hover:focus {
+        box-shadow: inset 0 0 0 0.0625em get-color( gray--100 ), inset 0 -0.3125em 0 0 get-color( green--400 );
+      }
+      
+      &:active {
+        background-color: get-color( gray--100 );
+        box-shadow: inset 0 0 0 0.1875em get-color( gray--100 ), inset 0 0 0 0.3125em get-color( green--400 );
+        color: get-color( green--400 );
+      }
+      
+      &[disabled="disabled"] {
+    
+        background-color: transparent;
+        box-shadow: none;
+        color: get-color( gray--030 );
+        opacity: 1;
+        outline: none; 
+        
+        &:hover,
+        &:focus,
+        &:focus:hover,
+        &:active {
+          background-color: transparent;
+          box-shadow: none;
+          color: get-color( gray--030 );
+          opacity: 1;
+          outline: none;  
+        }
+        
+      }
+      
+      
+    }
+  }
+  
+}

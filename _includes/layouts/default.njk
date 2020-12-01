@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ '/css/styleguide.css?v=4' | url }}">
+    <link rel="stylesheet" href="{{ '/css/prism-okaidia.css' | url }}">
+    <title>{{ pageTitle }}</title>
+  </head>
+  <body>
+    {% include "symbol/svg/sprite.symbol.svg" %}
+    <header class="internal">
+      <span><img alt="Jordbruksverket logo" src="https://cdn.jordbruksverket.se/designsystem/6.0.0/package/dist/release/assets/img/logo2.png"></span>
+      <p class="lead">Styleguide Playground</p>
+    </header>
+    <nav class="global">
+      <div class="grid-container fluid">
+        <ul class="menu">
+          {% set navPages = collections.all | eleventyNavigation %}
+          {%- for item in navPages -%}
+          <li><a href="{{ item.url | url }}" {% if page.url | isNavChildPage( item.url ) %}class="active" {% endif %}>{{ item.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </nav>
+    
+    <main class="grid-container fluid">
+      {{ content | safe }}
+    </main>
+    <script src="https://kit.fontawesome.com/5b6edd14b8.js" crossorigin="anonymous"></script>
+    <script src="{{ '/js/jquery-3.5.1.min.js' | url }}"
+    <script src="{{ '/node_modules/what-input/dist/what-input.min.js' | url }}"></script>
+    <script src="{{ '/node_modules/foundation-sites/dist/js/foundation.min.js' | url }}"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+// colorcard
+
+.color-card {
+  background-color: get-color( gray--000 );
+  border: 1px solid get-color( gray--010 );
+  color: get-color( gray--070 );
+  font-family: $font-family-monospace;
+  font-size: 0.8125em;
+  
+  > *:first-child {
+    height: 8em;
+    width: 100%;
+    border-bottom: 1px solid get-color( gray--010 );
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: .75em;
+    
+    > *:first-child {
+      font-weight: bold;
+    }
+  }
+}

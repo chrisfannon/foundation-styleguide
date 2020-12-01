@@ -1,0 +1,46 @@
+.svg-sprite {
+  display: none;
+}
+
+// https://www.24a11y.com/2018/accessible-svg-icons-with-inline-sprites/
+.svg-icon {
+  // Place the icon on the text baseline.
+  position: relative;
+  top: .125em;
+  
+  // Prevent the icon from shrinking inside a flex container.
+  flex-shrink: 0;
+  
+  // Scale the icon to match the font-size of the parent element.
+  height: 1em;
+  width: 1em;
+  
+  // Let the icon take whatever color the parent has. 
+  fill: currentColor;
+  
+  // If the icon is used on a link, which has a color transition,
+  // we can also use a transition on the fill value.
+  transition: fill .3s;
+  
+  &.error {
+    color: get-color( red--600 );
+  }
+}
+
+.visually-hidden {
+    // Move the text out of the flow of the container.
+    position: absolute;
+
+    // Reduce its height and width to just one pixel.
+    height: 1px;
+    width: 1px;
+
+    // Hide any overflowing elements or text.
+    overflow: hidden;
+
+    // Clip the box to zero pixels.
+    clip: rect(0, 0, 0, 0);
+
+    // Text won't wrap to a second line.
+    white-space: nowrap;
+}

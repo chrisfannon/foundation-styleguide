@@ -1,0 +1,13 @@
+// Visual Example
+
+.visual-example {
+  
+  background-color: get-color( gray--010 );
+  border: get-color( gray--020 );
+  border-radius: $global-radius;
+  padding: 1em;
+  
+  @at-root #{&}--dark {
+    background-color: get-color( gray--080 );  
+  }
+}

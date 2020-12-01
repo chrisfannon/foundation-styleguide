@@ -1,0 +1,122 @@
+// Menu
+//
+//
+//
+//
+
+.menu {
+
+  a {
+    font-weight: normal;
+    font-size: .8125em;
+    transition: all .2s ease-in-out;
+    box-shadow: none;
+    
+    &:hover {
+      border:none;
+      //background-color: get-color( blue--300 );
+      box-shadow: inset 0 0 0 2px #ffffff, inset 0 -4px 0 0 get-color( blue--600 );
+      color: get-color( blue--700 );
+    }
+    
+    &:focus {
+      border-color: get-color( gray--000 );
+      box-shadow: inset 0 0 0 0.1538em get-color( gray--000 ), inset 0 0 0 0.3077em get-color( green--500 );
+      color: get-color( green--700 );
+      outline: none;
+    }
+    
+    &:hover:focus {
+      box-shadow: inset 0 0 0 0.2308em get-color( gray--000 ), inset 0 -0.4615em 0 0 get-color( green--500 );
+    }
+     
+    &:active {
+      background-color: get-color( green--300 );
+      border-color: get-color( gray--000 );
+      //box-shadow: inset 0 0 0 0.3077em get-color( gray--000 ), inset 0 0 0 0.3846em get-color( green--500 );
+      color: get-color( green--700 );
+      transition-duration: .1s;
+    }
+    
+    &.active {
+      box-shadow: inset 0 0 0 2px #ffffff, inset 0 -4px 0 0 get-color( green--500 );
+      color: get-color( green--700 );
+      
+      &:hover {
+        //background-color: get-color( green--300 );
+        box-shadow: inset 0 0 0 2px #ffffff, inset 0 -6px 0 0 get-color( green--500 );
+      }
+      
+      &:focus {
+        border-color: get-color( gray--000 );
+        box-shadow: inset 0 0 0 0.1538em get-color( gray--000 ), inset 0 0 0 .3077em get-color( green--500 );
+        color: get-color( green--700 );
+        outline: none;
+      }
+      
+      &:hover:focus {
+        box-shadow: inset 0 0 0 0.2308em get-color( gray--000 ), inset .7692em 0 0 0 get-color( green--500 );
+      }
+    }
+
+  }
+  
+  &.vertical {
+    
+    a {
+      
+      color: get-color( blue--600 );
+      transition: all .2s ease-in-out;
+      
+      &.active {
+        
+        box-shadow: inset 0 0 0 0.1538em get-color( gray--005), inset .3077em 0 0 0 get-color( green--500 );
+        color: get-color( green--700 );
+        
+        &:hover {
+          box-shadow: inset 0 0 0 0.2308em get-color( gray--000 ), inset .7692em 0 0 0 get-color( green--500 );  
+        }
+        
+        &:focus {
+          background-color: get-color( gray--000 );
+          border-color: get-color( gray--000 );
+          box-shadow: inset 0 0 0 0.1538em get-color( gray--000 ), inset 0 0 0 .3077em get-color( green--500 );
+          color: get-color( green--700 );
+          outline: none;
+        }
+        
+        &:hover:focus {
+          box-shadow: inset 0 0 0 0.2308em get-color( gray--000 ), inset .7692em 0 0 0 get-color( green--500 );
+        }
+        
+      }
+      
+      &:hover {
+        box-shadow: inset 0 0 0 0.1538em get-color( gray--000 ), inset .3077em 0 0 0 get-color( blue--600 );
+        background-color: get-color( gray--000 );
+      }
+      
+      &:focus {
+        background-color: get-color( gray--000 );
+        border-color: get-color( gray--000 );
+        box-shadow: inset 0 0 0 0.1538em get-color( gray--000 ), inset 0 0 0 0.3077em get-color( green--500 );
+        color: get-color( green--700 );
+        outline: none;
+      }
+       
+      &:hover:focus {
+        box-shadow: inset 0 0 0 0.2308em get-color( gray--000 ), inset .7692em 0 0 0 get-color( green--500 );
+      }
+       
+      &:active {
+        background-color: get-color( green--300 );
+        border-color: get-color( gray--000 );
+        //box-shadow: inset 0 0 0 0.3077em get-color( gray--000 ), inset 0 0 0 0.3846em get-color( green--500 );
+        color: get-color( green--700 );
+        transition-duration: .1s;
+      }
+      
+    }
+    
+  } 
+}

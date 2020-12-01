@@ -1,0 +1,22 @@
+{
+  "name": "foundation-styleguide",
+  "version": "1.0.0",
+  "description": "A Foundation theme based on SJV Styleguide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Fannon",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "foundation-sites": "^6.6.3",
+    "grunt": "^1.2.1",
+    "grunt-dart-sass": "^1.1.3",
+    "grunt-svg-sprite": "^1.5.0",
+    "vue-waypoint": "^3.5.0",
+    "what-input": "^5.2.10"
+  }
+}

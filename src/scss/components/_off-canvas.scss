@@ -1,0 +1,11 @@
+// Overrides for Foundation
+
+.off-canvas,
+.off-canvas-absolute {
+  background-color: #ffffff;  
+}
+
+.off-canvas.is-open,
+.position-left.is-transition-push {
+  box-shadow: 0px 0px 3px 0 rgba(0,0,0,0.5);
+}

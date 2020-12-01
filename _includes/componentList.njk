@@ -1,0 +1,15 @@
+<nav class="local">
+  <ol class="vertical menu">
+  {% if eleventyNavigation.parent %}
+    {% set myKey = eleventyNavigation.parent %}
+  {% else %}
+    {% set myKey = eleventyNavigation.key %}
+  {% endif %}
+  {% set navLocalPages = collections.all | eleventyNavigation( myKey ) %}
+  {% for item in navLocalPages %}
+    <li>
+      <a href="{{ item.url | url}}" {% if page.url == item.url %}class="active" {% endif %}>{{ item.title }}</a>
+    </li>
+  {% endfor %}
+  </ol>
+</nav>

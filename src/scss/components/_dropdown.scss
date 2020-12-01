@@ -1,0 +1,15 @@
+// Dropdown
+
+.dropdown-pane {
+  &.is-open {
+    box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.1);
+  }
+  
+  &.small {
+    width: 100px;
+  }
+  
+  &.large {
+    width: 500px;
+  }
+}

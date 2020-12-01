@@ -1,0 +1,51 @@
+.tree {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+.tree-leaf {
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  padding: .3077em;
+  
+  &:first-child {
+    background-color: get-color( gray--000 );
+  }
+  
+  &:nth-child(2n) {
+    margin-left: 8px;
+  }
+  
+  
+  .edit-layers {
+    margin-bottom: 0;
+    
+    a {
+      box-shadow: none;
+    }
+    
+    li:first-child {
+      border: none;
+      font-weight: normal;
+    }
+    
+  }
+  
+}
+
+.leaf-name {
+  color: get-color( blue--600 );
+  font-weight: bold;
+}
+.leaf-meta {
+}
+
+.leaf-controls {
+  display: flex;
+  
+  > button {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,163 @@
+.basen-error-panel {
+  
+  // Off canvas overrides.
+  .position-left {
+    transform: translateX(-430px);
+    width: 430px;
+  }
+  
+  .off-canvas.is-open {
+    transform: translate(0, 0);
+  }
+  
+  // Tabs overrides
+  .tabs {
+    background-color: transparent;
+    border: none;
+    margin-top: 1.5em;
+    position: relative;
+    right: -1px;
+  }
+  
+  .tabs-title {
+    
+    + .tabs-title {
+      margin-top: 2px;
+    }
+    
+    > a {
+      background-color: get-color( blue--600 );
+      border: 1px solid get-color( blue--600 );
+      border-bottom-left-radius: 4px;
+      color: get-color( gray--000 );
+      font-size: 1em;
+      padding: 1em;
+      transition: all 0.2s ease-out;
+      
+      &:hover {
+        background-color: get-color( blue--700 );
+        box-shadow: inset 0 0 0 0.0625em get-color( blue--600 ), inset 0 -0.1875em 0 0 get-color( blue--400 ); 
+      }
+      
+      &:focus {
+        outline: none;
+      }
+      
+      &:hover:focus {
+        box-shadow: inset 0 0 0 0.0625em get-color( gray--000 ), inset 0 -0.3125em 0 0 get-color( green--500 );
+      }
+      
+      &:active {
+        background-color: get-color( green--700 );
+        box-shadow: inset 0 0 0 0.1875em get-color( green--600 ), inset 0 0 0 0.3125em get-color( green--400 );
+        transition-duration: .05s;
+      }
+      
+      &[aria-selected="true"] {
+        background-color: get-color( gray--000 );
+        border-color: get-color( blue--600 );
+        border-right-color: get-color( gray--000 );
+        color: get-color( green--600 );
+      }
+    }
+    
+    &.tabs-error {
+      
+      > a {
+        background-color: get-color( red--600 );
+        border-color: get-color( red--600 );
+        
+        &:hover {
+          background-color: get-color( red--600 );
+          box-shadow: inset 0 0 0 0.0625em get-color( red--600 ), inset 0 -0.1875em 0 0 get-color( red--400 ); 
+        }
+        
+        &:hover:focus {
+          box-shadow: inset 0 0 0 0.0625em get-color( gray--000 ), inset 0 -0.3125em 0 0 get-color( red--600 );
+        }
+        
+        &[aria-selected="true"] {
+          background-color: get-color( gray--000 );
+          border-right-color: get-color( gray--000 );
+          color: get-color( red--600 );
+        }
+      }
+      
+    }
+    
+    .svg-icon {
+      width: 1em;
+    }
+  }
+  
+  .tabs-content {
+    border: none;
+    //border-left: 1px solid get-color( blue--600 );
+    font-size: 13px;
+    //height: 100%;
+  }
+  
+  .tabs-panel {
+    //border-left: 1px solid get-color( blue--600 );
+    //height: 100%;
+  }
+  
+  // Lists overrides
+  ol {
+    color: get-color( red--600 );
+    
+    > li + li {
+      margin-top: 2px;
+    }
+    
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    
+    > li + li {
+      margin-top: 24px;
+    }
+  }
+  
+  // Everything else I added
+  .listing-heading {
+    font-weight: bold;
+  }
+  
+  .listing-meta {
+    //font-style: italic;
+    display: block;
+    line-height: 1;
+    margin-bottom: .5em;
+  }
+  
+  .media-object {
+    border-bottom: 1px solid get-color( gray--020 );
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .media-object-section {
+    
+    &:first-child {
+      padding-right: .5em;
+    }
+    
+    .svg-icon {
+      color: get-color( red--600 );
+      height: 18px;
+      width: 18px;
+    }
+    
+  }
+  
+  .tabs-cell {
+    background-color: get-color( gray--005 );
+    background-image: url( '../img/background-pattern.svg' );
+    background-repeat: repeat;
+    background-size: 2px;
+  }
+  
+}

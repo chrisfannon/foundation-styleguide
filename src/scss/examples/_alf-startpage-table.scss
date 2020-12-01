@@ -1,0 +1,70 @@
+.alf-startpage {
+  
+  thead {
+    background-color: transparent;
+    
+    tr {
+      border-bottom: 1px solid get-color( gray--020 );
+    }
+  }
+  tbody {
+    background-color: transparent;
+  }
+  tbody tr:nth-child(2n-1) {
+    background-color: get-color( gray--000 );
+  }
+  h2 {
+    margin: 0 auto 1.5em;
+    text-align: center;
+  }
+  
+  .footnotes {
+    font-size: 13px;
+  }
+  
+  
+  .button {
+    margin-bottom: 0;
+  }
+  
+  table {
+    
+    caption{
+      border-top: 1px solid #4d4d4d;
+      border-bottom: 1px solid #4d4d4d;
+      color: get-color( blue--700 );
+    }
+    
+    .shrink {
+      width: 1%;
+      white-space: nowrap;
+    }
+    
+    .expand {
+      
+    }
+    
+    td:nth-child(n+7) {
+      padding: 0;
+    }
+    
+    td:nth-child(3) {
+      white-space: nowrap;
+    }
+  }
+  
+  &.part-2 {
+    h2 {
+      text-align: left;
+      margin: 0 0 .296em;
+    }
+    
+    ul {
+      max-width: 800px;
+    }
+    
+    .legend {     
+    }
+  }
+
+}

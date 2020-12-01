@@ -1,0 +1,15 @@
+---
+layout: layouts/default.njk
+---
+
+<div class="grid-x grid-margin-x grid-margin-y">
+  <div class="cell medium-9 medium-offset-3">
+    {% include "breadcrumbs.njk" %}
+  </div>
+  <div class="cell medium-3">
+    {% include "componentList.njk" %}
+  </div>
+  <div class="cell medium-9">
+    {{ content | safe }}
+  </div>  
+</div>

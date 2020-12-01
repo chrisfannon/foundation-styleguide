@@ -1,0 +1,22 @@
+// Base
+
+body {
+  overflow-x: hidden;
+}
+pre code {
+  border: none;
+  display: block;
+}
+
+main {
+  margin-top: 2em;
+}
+
+a {
+  box-shadow: 0 1px 0 0 get-color( blue--600 );
+  transition: box-shadow .1s ease-out;
+  
+  &:hover {
+    box-shadow: 0 3px 0 0 get-color( blue--600 );
+  }
+}
