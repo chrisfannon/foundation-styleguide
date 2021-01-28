@@ -1,0 +1,22 @@
+$base: '.search-panel';
+
+#{ $base } {
+  
+}
+
+// Updates to the off-canvas object that wraps this panel.
+.off-canvas-search {
+  
+  &.off-canvas-absolute.is-transition-overlap {
+    z-index: 12;
+  }
+  
+  &.position-left {
+    width: 400px;
+    transform: translateX( -400px );
+  }
+  
+  &.off-canvas-absolute.is-open {
+    transform: translate(0, 0);
+  }
+}

@@ -26,7 +26,7 @@ textarea {
 }
 
 select,
-select:not([multiple]) {
+/*select:not([multiple])*/ {
   height: auto;
   padding: .75em 0.5em;
 }
@@ -47,7 +47,7 @@ select:not([multiple]) {
 [type="color"]:hover, 
 textarea:focus {
   box-shadow: inset 0px 0px 0px 1px get-color( gray--000 ), 
-              inset 0 -.25rem 0 0 get-color( blue--600 ),
+              inset 0 -.1875rem 0 0 get-color( blue--600 ),
               0 0 5px #cacaca;  
 }
 

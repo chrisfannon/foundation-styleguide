@@ -921,3 +921,45 @@ $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
 
+// Spacing
+$space-4xs: .125rem; //2
+$space-3xs: .25rem; //4
+$space-2xs: .375rem; //6
+$space-xs: .5rem; //8
+$space-s: .75rem; //12
+$space-default: 1rem; //16
+$space-l: 1.5rem;//24
+$space-xl: 2.0rem; //32
+$space-2xl: 3.0rem; // 48
+$space-3xl: 4.0rem; // 64
+$space-4xl: 6.0rem; // 96
+
+$spacing-palette: (
+  2: $space-4xs,
+  4: $space-3xs,
+  6: $space-2xs,
+  8: $space-xs,
+  12: $space-s,
+  16: $space-default,
+  24: $space-l,
+  32: $space-xl,
+  48: $space-2xl,
+  64: $space-3xl,
+  96: $space-4xl
+);
+
+/// Get spacing unit from spacing-palette
+///
+/// @param {key} space key (px value) from spacing-palette
+///
+/// @returns {rem} space sized in rem from spacing-palette
+@function get-space($key) {
+  @if map-has-key($spacing-palette, $key) {
+    @return map-get($spacing-palette, $key);
+  }
+  @else {
+    @error 'given $key is not available in $spacing-palette';
+  }
+}
+
+

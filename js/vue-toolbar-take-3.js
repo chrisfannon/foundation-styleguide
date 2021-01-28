@@ -36,7 +36,7 @@ var tool = Vue.component( 'toolbar-tool', {
   },
   template: `
     <div>
-      <button v-for="icon in icons" class="button clear dark tool" :name="icon.name" v-show="selectedItem == icon.name && ( myIsEditor == 'true' || icon.role == 'read' )" :data-toggle="icon.name == 'plus' ? 'creation-dropdown' : false" data-tooltip tabindex="1" :title="icon.label" data-position="bottom" data-alignment="center">
+      <button v-for="icon in icons" class="button clear dark tool" :class="{ 'active' : isActive }" :name="icon.name" v-show="selectedItem == icon.name && ( myIsEditor == 'true' || icon.role == 'read' )" data-tooltip tabindex="1" :title="icon.label" data-position="bottom" data-alignment="center" :data-toggle="icon.dataToggle" @click="toolToggle">
         <span v-html="icon.svg"></span>
         <!--<span>{{ icon.label }}</span>-->
       </button>
@@ -45,6 +45,13 @@ var tool = Vue.component( 'toolbar-tool', {
   data: function() {
     return {
       selected: 'false',
+      isActive: false
+    }
+  },
+  methods: {
+    toolToggle: function( evt ) {
+      console.log( 'isActive', this.isActive );
+      this.isActive = !this.isActive;
     }
   },
   mounted: function() {
@@ -85,13 +92,15 @@ var app = new Vue({
         name: 'plus',
         label: 'Skapa',
         role: 'edit',
-        svg: '<svg viewBox="0 0 448 448"><path d="M379.551,190.612l-121.163,0l0,-121.163c0,-14.867 -12.058,-26.925 -26.925,-26.925l-14.926,0c-14.867,0 -26.925,12.058 -26.925,26.925l0,121.163l-121.163,0c-14.867,0 -26.925,12.058 -26.925,26.925l0,13.926c0,14.867 12.058,26.925 26.925,26.925l121.163,0l0,121.163c0,14.867 12.058,26.925 26.925,26.925l14.926,0c14.867,0 26.925,-12.058 26.925,-26.925l0,-121.163l121.163,0c14.867,0 26.925,-12.058 26.925,-26.925l0,-13.926c0,-14.867 -12.058,-26.925 -26.925,-26.925Z" style="fill-rule:nonzero;"/><path d="M373.064,436.161l63.097,-63.097c4.369,-4.369 11.839,-1.275 11.839,4.904l0,63.097c0,3.83 -3.105,6.935 -6.935,6.935l-63.097,0c-6.179,0 -9.273,-7.47 -4.904,-11.839Z" style="fill-rule:nonzero;"/></svg>'
+        svg: '<svg viewBox="0 0 448 448"><path d="M379.551,190.612l-121.163,0l0,-121.163c0,-14.867 -12.058,-26.925 -26.925,-26.925l-14.926,0c-14.867,0 -26.925,12.058 -26.925,26.925l0,121.163l-121.163,0c-14.867,0 -26.925,12.058 -26.925,26.925l0,13.926c0,14.867 12.058,26.925 26.925,26.925l121.163,0l0,121.163c0,14.867 12.058,26.925 26.925,26.925l14.926,0c14.867,0 26.925,-12.058 26.925,-26.925l0,-121.163l121.163,0c14.867,0 26.925,-12.058 26.925,-26.925l0,-13.926c0,-14.867 -12.058,-26.925 -26.925,-26.925Z" style="fill-rule:nonzero;"/><path d="M373.064,436.161l63.097,-63.097c4.369,-4.369 11.839,-1.275 11.839,4.904l0,63.097c0,3.83 -3.105,6.935 -6.935,6.935l-63.097,0c-6.179,0 -9.273,-7.47 -4.904,-11.839Z" style="fill-rule:nonzero;"/></svg>',
+        dataToggle: 'creation-dropdown'
       },
       {
         name: 'layers',
         label: 'Lager',
         role: 'read',
-        svg: '<svg viewBox="0 0 512 512" xml:space="preserve"><path d="M35.499,158.255l210.86,95.654c6.156,2.797 13.117,2.797 19.272,0l210.861,-95.654c14.981,-6.798 14.981,-29.438 0,-36.236l-210.851,-95.663c-6.117,-2.796 -13.156,-2.796 -19.272,0l-210.87,95.654c-14.981,6.798 -14.981,29.447 0,36.245Zm441.002,79.912l-52.584,-23.834l-146.319,66.325c-6.843,3.105 -14.112,4.68 -21.598,4.68c-7.486,0 -14.746,-1.575 -21.598,-4.68l-146.31,-66.325l-52.593,23.834c-14.981,6.789 -14.981,29.419 0,36.209l210.86,95.581c6.156,2.788 13.117,2.788 19.272,0l210.87,-95.581c14.981,-6.79 14.981,-29.42 0,-36.209Zm0,115.686l-52.385,-23.743l-146.518,66.415c-6.843,3.105 -14.112,4.68 -21.598,4.68c-7.486,0 -14.746,-1.575 -21.598,-4.68l-146.509,-66.415l-52.394,23.743c-14.981,6.789 -14.981,29.42 0,36.209l210.86,95.582c6.156,2.788 13.117,2.788 19.272,0l210.87,-95.582c14.981,-6.789 14.981,-29.42 0,-36.209Z" style="fill-rule:nonzero;"/></svg>'
+        svg: '<svg viewBox="0 0 512 512" xml:space="preserve"><path d="M35.499,158.255l210.86,95.654c6.156,2.797 13.117,2.797 19.272,0l210.861,-95.654c14.981,-6.798 14.981,-29.438 0,-36.236l-210.851,-95.663c-6.117,-2.796 -13.156,-2.796 -19.272,0l-210.87,95.654c-14.981,6.798 -14.981,29.447 0,36.245Zm441.002,79.912l-52.584,-23.834l-146.319,66.325c-6.843,3.105 -14.112,4.68 -21.598,4.68c-7.486,0 -14.746,-1.575 -21.598,-4.68l-146.31,-66.325l-52.593,23.834c-14.981,6.789 -14.981,29.419 0,36.209l210.86,95.581c6.156,2.788 13.117,2.788 19.272,0l210.87,-95.581c14.981,-6.79 14.981,-29.42 0,-36.209Zm0,115.686l-52.385,-23.743l-146.518,66.415c-6.843,3.105 -14.112,4.68 -21.598,4.68c-7.486,0 -14.746,-1.575 -21.598,-4.68l-146.509,-66.415l-52.394,23.743c-14.981,6.789 -14.981,29.42 0,36.209l210.86,95.582c6.156,2.788 13.117,2.788 19.272,0l210.87,-95.582c14.981,-6.789 14.981,-29.42 0,-36.209Z" style="fill-rule:nonzero;"/></svg>',
+        dataToggle: 'offCanvasLayers'
       },
       {
         name: 'merge',
@@ -148,7 +157,8 @@ var app = new Vue({
         isActive: false
       }
       
-    ]
+    ],
+    isMenuToggled: false
   },
   methods: {
     selectNewControl: function( selected, id ) {
@@ -158,6 +168,9 @@ var app = new Vue({
     dropdownTriggered: function( evt, id ) {
       console.log( "Dropdown triggered", id );
       this.dropdown.isActive = ( this.dropdown.isActive ) ? false : true;
+    },
+    toggleMenu: function( evt, id ) {
+      this.isMenuToggled = !this.isMenuToggled;
     }
   }
 })

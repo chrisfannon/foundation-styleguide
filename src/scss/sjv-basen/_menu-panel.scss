@@ -1,0 +1,19 @@
+$base: '.menu-panel';
+
+#{ $base } {
+  
+  h4 {
+    svg {
+      margin-right: get_space( 6 );
+    }
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: get-space( 8 );
+    
+    & + h4 {
+      margin-top: get-space( 32 );
+    }
+  }
+}

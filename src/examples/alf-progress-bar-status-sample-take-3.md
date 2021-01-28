@@ -1,9 +1,9 @@
 ---
 layout: layouts/default.njk
-pageTitle: ALF | Progress Bar Status - Take 2
+pageTitle: ALF | Progress Bar Status - Take 3
 eleventyNavigation:
-  key: progress-bar-status-take-2
-  title: ALF - Progress Bar Status - Take 2
+  key: progress-bar-status-take-3
+  title: ALF - Progress Bar Status - Take 3
   parent: examples
 ---
 <div id="wrapper">
@@ -43,19 +43,37 @@ eleventyNavigation:
             </ul>
             <ul class="control-panel">
               <li>
-                <button class="button clear small"><i class="fas fa-save"></i><span>Spara</span></button>
+                <button class="button clear small">
+                  <svg class="svg-icon" aria-hidden="true" focusable="false">
+                    <use xlink:href="#svg--save-solid" />
+                  </svg>
+                  <span>Spara</span>
+                </button>
               </li><li>
-                <button class="button clear small"><i class="fas fa-download"></i><span>Ladda ner</span></button>
+                <button class="button clear small">
+                  <svg class="svg-icon" aria-hidden="true" focusable="false">
+                    <use xlink:href="#svg--download-solid" />
+                  </svg>
+                  <span>Ladda ner</span>
+                </button>
               </li><li>
-                <button class="button clear small"><i class="fas fa-times"></i><span>Radera</span></button>
+                <button class="button clear small">
+                  <svg class="svg-icon" aria-hidden="true" focusable="false">
+                    <use xlink:href="#svg--home-solid" />
+                  </svg>
+                  <span>Startsida</span>
+                </button>
               </li>
             </ul>
           </div>
+          <progress-bar :stops="stops" :icons="icons" />
+          <!--
           <ul class="progressbar left">
             <li v-for="( stop, index ) in stops">
               <a :href="stop.url" :class="[stop.pageType, stop.status]" ><span>{% raw %}{{ index }}. {{ stop.title }}</span>{% endraw %}</a>
             </li>
           </ul>
+          -->
         </div>
       </div>
       <div class="cell small-8 small-offset-1">
@@ -77,4 +95,4 @@ eleventyNavigation:
 </div>
 
 <script src="{{ '/js/vue.js' | url }}"></script>
-<script src="{{ '/js/vue-alf-progress-bar-status-sample-take-2.js' | url }}"></script>
+<script src="{{ '/js/vue-alf-progress-bar-status-sample-take-3.js' | url }}"></script>

@@ -33,13 +33,26 @@
     box-shadow: none;
     display: flex;
     justify-content: flex-end;
-    padding: .25em 5.5em .25em 0;
+    padding: .35em 5.5em .35em 0;
     position: relative;
     transition: all .2s ease-in-out;
     
     span {
       //box-shadow: 0 1px 0 0 get-color( blue--600 );
       transition: all .2s ease-in-out;
+      line-height: 1.5;
+    }
+    
+    .progress-icon {
+      color: get-color( gray--000 );
+      position: relative;
+      margin: -0.35rem 1.9rem 0 -1.9rem;
+      z-index: 10;
+    }
+    
+    .svg-icon {
+      width: .67em;
+      height: .67em;
     }
     
     &:hover {
@@ -116,6 +129,15 @@
     &.main {
       padding: 1em 5.5em 1em 0;
       
+      .progress-icon {
+        margin: -0.05rem 2.0rem 0 -2.0rem;
+      }
+      
+      .svg-icon {
+        width: .875em;
+        height: .875em;
+      }
+      
       &:after {
         border-radius: 12px;
         font-size: 13px;
@@ -131,7 +153,7 @@
       &:after {
         background-color: get-color( red--600 );
         box-shadow: 0 0 0 1px get-color( gray--000 ), 0 0 0 3px get-color( red--600 );
-        content: "\f00d";
+        //content: "\f00d";
         
       }
       
@@ -168,7 +190,7 @@
       &:after {
         background-color: #d9b43b;
         box-shadow: 0 0 0 1px get-color( gray--000 ), 0 0 0 3px #d9b43b;
-        content: "\f12a";
+        //content: "\f12a";
       }
       
       &:before {
@@ -204,7 +226,7 @@
       &:after {
         background-color: get-color( green--500 );
         box-shadow: 0 0 0 1px get-color( gray--000 ), 0 0 0 3px get-color( green--500 );
-        content: "\f00c";
+        //content: "\f00c";
       }
       
       &:before {
@@ -233,6 +255,49 @@
       }
       
     }
+    
+    &.disable {
+      
+      color: get-color( gray--030 );
+      
+      &:after {
+        background-color: get-color( gray--030 );
+        box-shadow: 0 0 0 1px get-color( gray--000 ), 0 0 0 3px get-color( gray--030 );
+        //content: "\f00c";
+      }
+      
+      &:before {
+        background-color: get-color( gray--030 );
+      }
+      
+      &:hover {
+        
+        background-color: get-color( gray--005 );
+        
+        span {
+          box-shadow: none; 
+        }
+        
+        &:after {
+          // box-shadow: 0 0 0 1px get-color( gray--000 ), 0 0 0 5px get-color( gray--030 );
+        }
+      }
+      
+      &:focus {
+        
+        &:after {
+          box-shadow: 0 0 0 1px get-color( gray--000 ), 0 0 0 4px get-color( gray--070 );
+        }
+      }
+      
+      &:focus:hover {
+        
+        &:after {
+          box-shadow: 0 0 0 1px get-color( gray--000 ), 0 0 0 5px get-color( gray--070 );
+        }
+      }
+      
+    }
   }
   
   &.left {
@@ -241,23 +306,23 @@
       
     a {
       justify-content: flex-start;
-      padding: .25em 0 .25em 4.5em;
-      text-indent: -1.1em;
+      padding: .25em 0 .25em 4.0em;
+      text-indent: -1.28em;
       
       &:after {
-        left: 18px;
+        left: 10px;
         text-indent: 0.02em;
       }
       
       &:before {
-        left: 24px;
+        left: 16px;
       }
       
       &.main {
-        padding: 1em 0 1em 4.5em;
+        padding: 1em 0 1em 4.0em;
         
         &:after {
-          left: 14px;
+          left: 6px;
           text-indent: 0.02em;
         }
       }
@@ -296,6 +361,11 @@
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
+    
+    .svg-icon {
+      height: 1.2em;
+      width: 1.2em;
+    }
     
      button {
        align-items: center;

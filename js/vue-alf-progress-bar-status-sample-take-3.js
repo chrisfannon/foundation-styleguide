@@ -63,6 +63,28 @@ const errorSummary = Vue.component( 'error-summary', {
       </div>'
 });
 
+var progressBar = Vue.component( 'progress-bar', {
+  props : {
+    stops: { type: Array },
+    icons: { type: Array }
+  },
+  data : function() {
+    return {
+    }
+  },
+  template: `
+    <ul class="progressbar left">
+      <li v-for="( stop, index ) in stops">
+        <a :href="stop.url" :class="[stop.pageType, stop.status]" >
+          <span class="progress-icon" v-for="icon in icons" v-show="stop.status == icon.name" v-html="icon.svg"></span>
+          <span>{{ index }}. {{ stop.title }}</span>
+        </a>
+      </li>
+    </ul>
+  `,
+  
+});
+
 var filter = function(text, length, clamp){
     clamp = clamp || '...';
     var node = document.createElement('div');
@@ -83,7 +105,7 @@ var app = new Vue({
         id : 0,
         url : '#part0',
         title : "Välj insats",
-        status  : 'default',
+        status  : 'success',
         seen : false,
         pageType: "main"
       },
@@ -99,7 +121,7 @@ var app = new Vue({
         id : 2,
         url : '#part2',
         title : "Frågor grupp",
-        status  : 'default',
+        status  : 'warning',
         seen : false,
         pageType: "sub"
       },
@@ -107,7 +129,7 @@ var app = new Vue({
         id : 3,
         url : '#part3',
         title : "Frågor grupp",
-        status  : 'default',
+        status  : 'error',
         seen : false,
         pageType: "sub"
       },
@@ -115,7 +137,7 @@ var app = new Vue({
         id : 4,
         url : '#part4',
         title : "Frågor grupp",
-        status  : 'default',
+        status  : 'disable',
         seen : false,
         pageType: "sub"
       },
@@ -123,7 +145,7 @@ var app = new Vue({
         id : 5,
         url : '#part5',
         title : "Utgifter och finansiering",
-        status  : 'default',
+        status  : 'disable',
         seen : false,
         pageType: "main"
       },
@@ -131,7 +153,7 @@ var app = new Vue({
         id : 6,
         url : '#part6',
         title : "Utgifter och finansiering",
-        status  : 'default',
+        status  : 'disable',
         seen : false,
         pageType: "main"
       },
@@ -139,7 +161,7 @@ var app = new Vue({
         id : 7,
         url : '#part7',
         title : "Lägg till poster",
-        status  : 'default',
+        status  : 'disable',
         seen : false,
         pageType: "sub"
       },
@@ -147,7 +169,7 @@ var app = new Vue({
         id : 8,
         url : '#part8',
         title : "Bilagor",
-        status  : 'default',
+        status  : 'disable',
         seen : false,
         pageType: "main"
       },
@@ -155,9 +177,27 @@ var app = new Vue({
         id : 9,
         url : '#part9',
         title : "Granska och skicka in",
-        status  : 'default',
+        status  : 'disable',
         seen : false,
         pageType: "main"
+      }
+    ],
+    icons : [
+      {
+        name : "success",
+        svg: '<svg class="svg-icon"><use xlink:href="#svg--check-solid" /></svg>'
+      },
+      {
+        name : 'error',
+        svg : '<svg class="svg-icon"><use xlink:href="#svg--times-solid" /></svg>'
+      },
+      {
+        name : 'warning',
+        svg : '<svg class="svg-icon"><use xlink:href="#svg--exclamation-triangle-solid" /></svg>'
+      },
+      {
+        name : 'disable',
+        svg : '<svg class="svg-icon"><use xlink:href="#svg--lock-solid" /></svg>'
       }
     ],
     fields : [

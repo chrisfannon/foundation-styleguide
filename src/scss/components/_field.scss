@@ -1,0 +1,120 @@
+label {
+  font-size: 1em;
+}
+
+.field__header > * {
+  display: inline;
+}
+
+.field__help {
+  margin-top: .25rem;
+}
+
+.help__toggle {
+  color: #116fa2;
+  margin-left: .25rem;
+  margin-bottom: 0;
+  position: relative;
+  top: -3px;
+}
+
+.help__text {
+  box-shadow: inset 2px 0 0 0 #f2f2f2, inset 4px 0 0 0 #ccc;
+  font-size: 1em;
+  margin: 4px 0 8px 0;
+  padding: 0px 0 0px 12px;
+}
+
+.help__text p {
+  margin-bottom: .5rem;
+}
+
+.help__text .button {
+  margin-bottom: 0;
+}
+
+.help__error {
+  color: #ab362b;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: .5rem;
+}
+
+.help__error > *:first-child {
+  flex: 0 1 1rem;
+  margin-right: .5rem;
+  position: relative;
+  top: 4px;
+}
+
+.help__error > p {
+  margin-bottom: 0;
+}
+
+.help__format {
+  margin-bottom: 0;
+}
+
+.field__wrapper {
+  margin-top: .25rem;
+}
+
+.hide {
+  display: none;
+}
+
+/* Update contrast styles */
+input {
+  border: #808080;
+}
+
+/* Error State */
+.error label {
+  color: #ab362b;
+}
+
+/* Medium State */
+.field__object {
+  font-size: 1rem;
+}
+
+/* Small State */
+.field__object.small {
+  font-size: .8125rem;
+}
+.small [type="text"], 
+.small [type="password"], 
+.small [type="date"], 
+.small [type="datetime"], 
+.small [type="datetime-local"], 
+.small [type="month"], 
+.small [type="week"], 
+.small [type="email"], 
+.small [type="number"], 
+.small [type="search"], 
+.small [type="tel"], 
+.small [type="time"], 
+.small [type="url"], 
+.small [type="color"], 
+.small textarea,
+.small select {
+  font-size: 1em;
+  padding: .25rem .125rem;
+}
+
+.small .field__wrapper {
+  margin-top: 0;
+}
+
+.small .field__help {
+  margin-top: .125rem;
+}
+
+.small .help__text {
+  margin: .125rem 0 .25rem 0;
+}
+.small .help__text p,
+.small .help__error,
+.small .help__format {
+  margin-bottom: .25rem;
+}

@@ -1,0 +1,16 @@
+$base: '.panel';
+
+#{ $base } {
+  font-size: .8125em;
+  
+  h3 {
+    border-bottom: get-space( 4 ) solid get-color( gray--070 );
+    margin: 0;
+    padding: get_space( 8 );
+    width: 100%;
+  }
+  
+  @at-root #{&}__content {
+    margin: get-space( 16 ) get-space( 8 ) get-space( 8 );
+  }
+}

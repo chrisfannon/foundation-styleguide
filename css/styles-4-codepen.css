@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   overflow-x: hidden;
 }
@@ -308,12 +307,23 @@ h3 {
   box-shadow: none;
   display: flex;
   justify-content: flex-end;
-  padding: 0.25em 5.5em 0.25em 0;
+  padding: 0.35em 5.5em 0.35em 0;
   position: relative;
   transition: all 0.2s ease-in-out;
 }
 .progressbar a span {
   transition: all 0.2s ease-in-out;
+  line-height: 1.5;
+}
+.progressbar a .progress-icon {
+  color: #ffffff;
+  position: relative;
+  margin: -0.35rem 1.9rem 0 -1.9rem;
+  z-index: 10;
+}
+.progressbar a .svg-icon {
+  width: 0.67em;
+  height: 0.67em;
 }
 .progressbar a:hover {
   background-color: #e8f4fc;
@@ -375,6 +385,13 @@ h3 {
 .progressbar a.main {
   padding: 1em 5.5em 1em 0;
 }
+.progressbar a.main .progress-icon {
+  margin: -0.05rem 2rem 0 -2rem;
+}
+.progressbar a.main .svg-icon {
+  width: 0.875em;
+  height: 0.875em;
+}
 .progressbar a.main:after {
   border-radius: 12px;
   font-size: 13px;
@@ -385,7 +402,6 @@ h3 {
 .progressbar a.error:after {
   background-color: #ab362b;
   box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #ab362b;
-  content: "";
 }
 .progressbar a.error:before {
   background-color: #ab362b;
@@ -402,7 +418,6 @@ h3 {
 .progressbar a.warning:after {
   background-color: #d9b43b;
   box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #d9b43b;
-  content: "";
 }
 .progressbar a.warning:before {
   background-color: #d9b43b;
@@ -419,7 +434,6 @@ h3 {
 .progressbar a.success:after {
   background-color: #84bd00;
   box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #84bd00;
-  content: "";
 }
 .progressbar a.success:before {
   background-color: #84bd00;
@@ -433,27 +447,49 @@ h3 {
 .progressbar a.success:focus:hover:after {
   box-shadow: 0 0 0 1px #ffffff, 0 0 0 5px #84bd00;
 }
+.progressbar a.disable {
+  color: #b3b3b3;
+}
+.progressbar a.disable:after {
+  background-color: #b3b3b3;
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #b3b3b3;
+}
+.progressbar a.disable:before {
+  background-color: #b3b3b3;
+}
+.progressbar a.disable:hover {
+  background-color: #f2f2f2;
+}
+.progressbar a.disable:hover span {
+  box-shadow: none;
+}
+.progressbar a.disable:focus:after {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 4px #4d4d4d;
+}
+.progressbar a.disable:focus:hover:after {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 5px #4d4d4d;
+}
 .progressbar.left {
   font-size: 16px;
   text-align: left;
 }
 .progressbar.left a {
   justify-content: flex-start;
-  padding: 0.25em 0 0.25em 4.5em;
-  text-indent: -1.1em;
+  padding: 0.25em 0 0.25em 4em;
+  text-indent: -1.28em;
 }
 .progressbar.left a:after {
-  left: 18px;
+  left: 10px;
   text-indent: 0.02em;
 }
 .progressbar.left a:before {
-  left: 24px;
+  left: 16px;
 }
 .progressbar.left a.main {
-  padding: 1em 0 1em 4.5em;
+  padding: 1em 0 1em 4em;
 }
 .progressbar.left a.main:after {
-  left: 14px;
+  left: 6px;
   text-indent: 0.02em;
 }
 
@@ -484,6 +520,10 @@ h3 {
   justify-content: space-between;
   flex-direction: row;
   width: 100%;
+}
+.meta .control-panel .svg-icon {
+  height: 1.2em;
+  width: 1.2em;
 }
 .meta .control-panel button {
   align-items: center;

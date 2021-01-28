@@ -8,7 +8,8 @@ module.exports = function (grunt) {
       target: {
         files: {
           'css/styleguide.css': 'src/scss/styleguide.scss',
-          'css/styles-4-codepen.css': 'src/scss/styles-for-codepen.scss'
+          'css/styles-4-codepen.css': 'src/scss/styles-for-codepen.scss',
+          'css/sjv-basen.css': 'src/scss/sjv-basen/sjv-basen.scss'
         }
       }
     },
