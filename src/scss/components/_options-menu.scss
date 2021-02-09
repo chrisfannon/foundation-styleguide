@@ -9,30 +9,50 @@ $base: '.options-menu';
   
   li {
     margin: 0;
+    
+    & + li {
+      margin-top: get-space( 2 );
+    }
   }
   
-  a {
+  a,
+  button {
+    appearance: none;
+    border-radius: 0px;
     box-shadow: none;
     color: get-color( blue--600 );
     display: block;
+    line-height: 1.5;
     padding: get-space( 4 ) get-space( 12 );
+    text-align: left;
     text-decoration: none;
     transition: all .2s ease-out;
     width: 100%;
     
     &:hover {
       background-color: get-color( blue--300 );
-      box-shadow: inset 0 -3px 0 0 get-color( blue--600 );
+      //box-shadow: inset 0 0 0 1px get-color( gray--000 ), inset 0 -3px 0 0 get-color( blue--600 );
+      box-shadow: inset 0 -2px 0 0 get-color( blue--600 );
     }
     
     &:focus {
       background-color: get-color( gray--000 );
-      box-shadow: inset 0 0 0 1px get-color( gray--000 ), inset 0 0 0 3px get-color( green--500 );
+      //box-shadow: inset 0 0 0 1px get-color( gray--000 ), inset 0 0 0 3px get-color( green--500 );
+      box-shadow: inset 0 0 0 2px get-color( green--500 );
       outline: none;
     }
     
     &:focus:hover {
-      box-shadow: inset 0 0 0 0px get-color( gray--000 ), inset 0 -5px 0 0 get-color( green--500 );
+      //box-shadow: inset 0 0 0 1px get-color( gray--000 ), inset 0 -4px 0 0 get-color( green--500 );
+      box-shadow: inset 0 -4px 0 0 get-color( green--500 );
+    }
+  }
+  
+  &.small {
+    
+    a,
+    button {
+      font-size: get-type( 13 );
     }
   }
 }
