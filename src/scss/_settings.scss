@@ -962,4 +962,46 @@ $spacing-palette: (
   }
 }
 
+// Typographic Sizing
+$ratio: 1.2;
+$type-default: 1rem;
+$type-m: $type-default;
+$type-xs: ( $type-m / $ratio ) / $ratio;
+$type-s: $type-m / $ratio;
+$type-l: $type-m * $ratio;
+$type-xl: $type-l * $ratio;
+$type-2xl: $type-xl * $ratio;
+$type-3xl: $type-2xl * $ratio;
+$type-4xl: $type-3xl * $ratio;
+$type-5xl: $type-4xl * $ratio;
+$type-6xl: $type-5xl * $ratio;
+$type-7xl: $type-6xl * $ratio;
+
+$type-palette: (
+  11 : $type-xs,
+  13 : $type-s,
+  16 : $type-m,
+  19 : $type-l,
+  23 : $type-xl,
+  27 : $type-2xl,
+  33 : $type-3xl,
+  39 : $type-4xl,
+  47 : $type-5xl,
+  57 : $type-6xl,
+  68 : $type-7xl
+);
+
+/// Get spacing unit from spacing-palette
+///
+/// @param {key} space key (px value) from spacing-palette
+///
+/// @returns {rem} space sized in rem from spacing-palette
+@function get-type($key) {
+  @if map-has-key($type-palette, $key) {
+    @return map-get($type-palette, $key);
+  }
+  @else {
+    @error 'given $key is not available in $type-palette';
+  }
+}
 
