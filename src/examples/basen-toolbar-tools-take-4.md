@@ -105,7 +105,7 @@ eleventyNavigation:
         <button class="button hollow small">Spara</button>
       </div>
       <div class="tools">
-        <toolbar-tool v-for="(control, index) in selectControls" :icons="icons" :selected-item="control.name" :my-is-editor="isEditor" :key="index" @toggleMenu="toggleMenu"></toolbar-tool>
+        <toolbar-tool v-for="(control, index) in selectControls" :icons="icons" :selected-item="control.name" :my-is-editor="isEditor" :key="index" :has-break="control.hasBreak" @toggleMenu="toggleMenu"></toolbar-tool>
       </div>
       <div class="creationMenu">
         <div class="dropdown-pane small" id="creation-dropdown" data-dropdown data-auto-focus="true" data-v-offset="4">
@@ -125,12 +125,24 @@ eleventyNavigation:
           </ul>
         </div>
       </div>
+      <div class="copyPasteDropdown">
+        <div class="dropdown-pane small" id="copy-paste-dropdown" data-dropdown data-auto-focus="true" data-v-offset="4">
+          <ul class="options-menu">
+            <li>
+              <button data-toggle="copy-paste-dropdown">Kopiera</button>
+            </li>
+            <li>
+              <button data-toggle="copy-paste-dropdown">Klistra in</button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="cell small-12" style="flex: 2 0 auto; height: 100%">
       <div class="off-canvas-wrapper" style="height: 100%">
         <div class="off-canvas-absolute position-left" id="offCanvasMenu" data-off-canvas style="height: 100%">
           <div class="panel menu-panel">
-            <h3 class="h4">Meny</h3>
+            <h3 class="h6">Meny</h3>
             <div class="panel__content">
               <h4 class="h6">
                 <svg class="svg-icon" aria-hidden="true" role="img" focusable="false">
@@ -156,7 +168,9 @@ eleventyNavigation:
         <!-- Off Canvas - Right Side - Layer List -->
         <div class="off-canvas-absolute position-right" id="offCanvasLayers" data-off-canvas style="height: 100%">
           <div class="panel">
-            <h3 class="h4">Lager</h3>
+            <div class="panel__header">
+              <h3 class="h6">Lager</h3>
+            </div>
             <div class="panel__content">
               <div class="layers">
                 <div class="layers__profile">
@@ -165,19 +179,20 @@ eleventyNavigation:
                     <div class="field__header">
                       <label for="profile">
                         <span>Profil</span>
-                        <button class="button clear small">Spara</button>
+                        <div class="c-tag">Ändrad</div>
                         <button class="button clear small" data-toggle="profil-contextual-menu">
-                          <svg class="svg-icon" aria-hidden="true" role="img" focusable="false">
+                          <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" style="position: relative; top: 1px">
                             <use xlink:href="#svg--ellipsis-v-solid" />
                           </svg>
                         </button>
                       </label>
                       <!-- .contextual-menu-dropdown -->
-                      <div class="dropdown-pane" id="profil-contextual-menu" class="large" data-dropdown data-auto-focus="true" data-position="bottom" data-alignment="right">
+                      <div class="dropdown-pane" id="profil-contextual-menu" class="large" data-dropdown data-auto-focus="true" data-position="bottom" data-alignment="right" data-v-offset="-1">
                         <ul class="options-menu">
-                          <li><a href="">Spara som...</a></li>
-                          <li><a href="">Ta bort</a></li>
-                          <li><a href="">Duplicera</a></li>
+                          <li><button>Spara</button></li>
+                          <li><button>Spara som...</button></li>
+                          <li><button>Ta bort</button></li>
+                          <li><button>Duplicera</button></li>
                         </ul>
                       </div>
                     </div>
@@ -199,8 +214,62 @@ eleventyNavigation:
         <!-- Off Canvas - Left Side - Search Panel -->
         <div class="off-canvas-absolute position-left off-canvas-search" id="offCanvasSearch" data-off-canvas style="height: 100%">
           <div class="panel search-panel">
-            <h3 class="h4">Advancerad Sök</h3>
+            <div class="panel__header">
+              <h3 class="h6">Sök Block</h3>
+              <button class="button clear small" data-toggle="offCanvasSearch">Stäng</button>
+            </div>
             <div class="panel__content">
+              <!-- .field-object -->
+              <div class="field__object small">
+                <div class="field__header">
+                  <label for="profile">
+                    <span>Län</span>
+                  </label>
+                </div>
+                <div class="field__wrapper">
+                  <select id="profile">
+                    <option value="dalarna">Dalarnas län</option>
+                    <option value="jonkoping">Jönköpings län</option>
+                    <option value="kalmar">Kalmars län</option>
+                  </select>
+                </div>
+              </div>
+              <!-- /.field-object -->
+              <!-- .field-object -->
+              <div class="field__object small">
+                <div class="field__header">
+                  <label for="profile">
+                    <span>Kommun</span>
+                  </label>
+                </div>
+                <div class="field__wrapper">
+                  <select id="profile">
+                    <option value="dalarna">Avesta</option>
+                    <option value="jonkoping">Borlänge</option>
+                    <option value="kalmar">Falun</option>
+                    <option value="kalmar">Gagnef</option>
+                    <option value="kalmar">Hedomora</option>
+                    <option value="kalmar">Leksand</option>
+                    <option value="kalmar">Ludvika</option>
+                  </select>
+                </div>
+              </div>
+              <!-- /.field-object -->
+              <!-- .field-object -->
+              <fieldset class="field__object small">
+                <div class="field__header">
+                  <legend for="profile">
+                    <span>Status</span>
+                  </legend>
+                </div>
+                <div class="field__wrapper">
+                  <input type="checkbox" id="falt" /><label for="falt">Fältgranskning</label>
+                  <input type="checkbox" id="expert" /><label for="expert">Expert</label>
+                  <input type="checkbox" id="utredning" /><label for="utredning">Utredning</label>
+                  <input type="checkbox" id="klar" /><label for="klar">Klar</label>
+                </div>
+              </fieldset>
+              <!-- /.field-object -->
             </div>
           </div>
         </div>
