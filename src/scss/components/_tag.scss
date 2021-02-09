@@ -1,0 +1,13 @@
+// Tag
+
+$base: '.c-tag';
+
+#{ $base } { 
+  background-color: get-color( brown--600 );
+  color: get-color( gray--000 );
+  font-size: get-type( 11 );
+  font-weight: normal;
+  line-height: 1;
+  margin-left: get-space( 4 );
+  padding: get-space( 2 ) get-space( 4 );
+}
